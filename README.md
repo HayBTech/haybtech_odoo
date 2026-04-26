@@ -1,6 +1,6 @@
 # HayBTech for Odoo
 
-Official Odoo payment provider module for HayBTech -- accept Orange Money, Wave, Free Money, MTN MoMo, Moov Flooz, and TMoney in your Odoo eCommerce and Point of Sale.
+Official Odoo payment provider module for HayBTech -- accept mobile money payments in your Odoo eCommerce and Point of Sale.
 
 [![Odoo](https://img.shields.io/badge/Odoo-16%20%7C%2017-714B67.svg)](https://www.odoo.com/)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
@@ -88,16 +88,6 @@ https://your-odoo.com/payment/haybtech/webhook
 
 ---
 
-## Supported Providers
-
-| Provider       | Countries           |
-|:---------------|:--------------------|
-| Orange Money   | SN, CI, ML, BF, GW |
-| Wave           | SN, CI, ML, BF     |
-| Free Money     | SN                  |
-| MTN MoMo       | CI, BJ              |
-| Moov Flooz     | BJ, TG, NE, BF     |
-| TMoney         | TG                  |
 
 ---
 
