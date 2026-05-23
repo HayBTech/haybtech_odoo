@@ -6,7 +6,7 @@ from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 
 # Import SDK
-from ..sdk import HayBTech
+from ..sdk import HayBTechClient
 
 _logger = logging.getLogger(__name__)
 
@@ -25,16 +25,16 @@ class PaymentTransaction(models.Model):
         try:
             # Initialize SDK
             secret_key = self.provider_id._haybtech_get_secret_key()
-            HayBTech.configure(secret_key)
+            client = HayBTechClient(secret_key)
 
             # Create Payment
-            payment_response = HayBTech.payments.create(
-                merchant_ref=self.reference,
-                amount=int(self.amount),
-                currency=self.currency_id.name,
-                return_url=return_url,
-                cancel_url=return_url
-            )
+            payment_response = client.payments.create({
+                'merchant_ref': self.reference,
+                'amount': int(self.amount),
+                'currency': self.currency_id.name,
+                'return_url': return_url,
+                'cancel_url': return_url
+            })
 
             if payment_response.get('status') == 'success' and 'payment_url' in payment_response.get('data', {}):
                 payment_url = payment_response['data']['payment_url']
