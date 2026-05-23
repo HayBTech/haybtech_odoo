@@ -1,2 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data noupdate="1">
+        <record id="payment_provider_haybtech" model="payment.provider">
+            <field name="name">HayBTech</field>
+            <field name="code">haybtech</field>
+            <!-- Redirect mode since we generate an external payment URL -->
+            <field name="redirect_form_view_id" ref="payment_haybtech_redirect_form"/>
+            <field name="state">test</field>
+            <field name="allow_tokenization">False</field>
+            <field name="allow_express_checkout">False</field>
+            <field name="payment_method_ids" eval="[(6, 0, [ref('payment.payment_method_unknown')])]"/>
+        </record>
+    </data>
 </odoo>

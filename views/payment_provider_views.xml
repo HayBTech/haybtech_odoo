@@ -1,2 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="payment_provider_form_haybtech" model="ir.ui.view">
+        <field name="name">payment.provider.form.haybtech</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <group name="provider_credentials" position="inside">
+                <group invisible="code != 'haybtech'">
+                    <field name="haybtech_test_secret_key" password="True" invisible="state != 'test'"/>
+                    <field name="haybtech_live_secret_key" password="True" invisible="state != 'enabled'"/>
+                    <field name="haybtech_webhook_secret" password="True"/>
+                </group>
+            </group>
+        </field>
+    </record>
 </odoo>
