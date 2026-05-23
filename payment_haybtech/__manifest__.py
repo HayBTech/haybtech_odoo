@@ -12,4 +12,5 @@
     ],
     'application': False,
     'license': 'LGPL-3',
+    'images': ['static/description/cover.png'],
 }
