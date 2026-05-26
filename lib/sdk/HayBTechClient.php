@@ -102,7 +102,7 @@ final class HayBTechClient
     {
         $baseUrl = $this->options['base_url'] 
             ?? getenv('HAYBTECH_API_URL') 
-            ?? 'https://api.haybtech.com/v1';
+            ?? 'https://app.haybtech.com/v1';
 
         $base = rtrim((string) $baseUrl, '/');
 
